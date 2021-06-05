@@ -73,11 +73,11 @@ end
 % 绘图及保存文件专用
 swDz=swDz-init_T.t(3);
 spDz=spDz-init_T.t(3);
-theoData=[swDx' swDz' swVx' swVz' swAx' swAz'];
+theoData=[swDx' swDz'];
 % 打开文件
-f=fopen('theoreticalImgPoints.txt','w');
+f=fopen('TheoreticalPoints.txt','w');
 for i=1:1:length(theoData)
-    fprintf(f,'%.12f %.12f %.12f %.12f %.12f %.12f\n',theoData(i,:));
+    fprintf(f,'%.12f %.12f\n',theoData(i,:));
 end
 % 关闭文件
 fclose(f);
