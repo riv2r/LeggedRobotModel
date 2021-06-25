@@ -21,7 +21,8 @@ robot=SerialLink([H L1 L2 L3],'name','leggedRobot');
 % 绘制机器人
 init_q=[pi/2,-pi/2,atan(len_L3/len_L2),-pi/2];
 init_T=robot.fkine(init_q);
-% robot.plot(init_q);
+%robot.plot(init_q);
+%set(gca,'FontSize',15,'FontName','Times New Roman','LineWidth',1);
 
 % 调节机器人
 % teach(robot)
@@ -121,7 +122,7 @@ for i=linspace(1,sum,sum)
     sptheta=[sptheta;theta1,theta2,theta3,theta4];
 end
 
-%{
+
 % 绘图专用
 theta=theta/pi*180;
 sptheta=sptheta/pi*180;
@@ -130,95 +131,91 @@ sptheta=sptheta/pi*180;
 %{
 % 绘制摆动相运动曲线
 figure(1)
-
-subplot(2,3,1)
 plot(time,swDx,'linewidth',2);
 ylabel('x/mm')
-xlabel('(a) x方向位移与时间关系曲线')
-title('t/s','position',[0.5,0])
+xlabel('t/s')
+set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(2,3,4)
+figure(2)
 plot(time,swDz,'linewidth',2);
 ylabel('z/mm')
-xlabel('(d) z方向位移与时间关系曲线')
-title('t/s','position',[0.5,0])
+xlabel('t/s')
+set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(2,3,2)
+figure(3)
 plot(time,swVx,'linewidth',2);
 ylabel('V_x/mm/s')
-xlabel('(b) x方向速度与时间关系曲线')
-title('t/s','position',[0.5,0])
+xlabel('t/s')
+set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(2,3,5)
+figure(4)
 plot(time,swVz,'linewidth',2);
 ylabel('V_z/mm/s')
-xlabel('(e) z方向速度与时间关系曲线')
-title('t/s','position',[0.5,-24])
+xlabel('t/s')
+set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(2,3,3)
+figure(5)
 plot(time,swAx,'linewidth',2);
 ylabel('A_x/mm^2/s')
-xlabel('(c) x方向加速度与时间关系曲线')
-title('t/s','position',[0.5,-100])
+xlabel('t/s')
+set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(2,3,6)
+figure(6)
 plot(time,swAz,'linewidth',2);
 ylabel('A_z/mm^2/s')
-xlabel('(f) z方向加速度与时间关系曲线')
-title('t/s','position',[0.5,-200])
+xlabel('t/s')
+set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 %}
 
 %{
 % 绘制摆动相相角变化
-figure(2)
-subplot(1,3,1)
+figure(1)
 plot(time,theta(:,2),'linewidth',2);
 ylabel('\theta_1/deg')
-title('t/s','position',[0.5,-91])
-xlabel('(a) 髋关节相角\theta_1与时间关系曲线')
+xlabel('t/s')
+set(gca,'FontSize',30,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(1,3,2)
+figure(2)
 plot(time,theta(:,3),'linewidth',2);
 ylabel('\theta_2/deg')
-title('t/s','position',[0.5,40])
-xlabel('(b) 膝关节相角\theta_2与时间关系曲线')
+xlabel('t/s')
+set(gca,'FontSize',30,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(1,3,3)
+figure(3)
 plot(time,theta(:,4),'linewidth',2);
 ylabel('\theta_3/deg')
-title('t/s','position',[0.5,-96])
-xlabel('(c) 踝关节相角\theta_3与时间关系曲线')
+xlabel('t/s')
+set(gca,'FontSize',30,'FontName','Times New Roman','LineWidth',1);
 grid on
 
 % 绘制支撑相相角变化
-figure(3)
-subplot(1,3,1)
+figure(1)
 plot(time,sptheta(:,2),'linewidth',2);
 ylabel('\theta_1/deg')
-title('t/s','position',[0.5,-91])
-xlabel('(a) 髋关节相角\theta_1与时间关系曲线')
+xlabel('t/s')
+set(gca,'FontSize',30,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(1,3,2)
+figure(2)
 plot(time,sptheta(:,3),'linewidth',2);
 ylabel('\theta_2/deg')
-title('t/s','position',[0.5,40])
-xlabel('(b) 膝关节相角\theta_2与时间关系曲线')
+xlabel('t/s')
+set(gca,'FontSize',30,'FontName','Times New Roman','LineWidth',1);
 grid on
 
-subplot(1,3,3)
+figure(3)
 plot(time,sptheta(:,4),'linewidth',2);
 ylabel('\theta_3/deg')
-title('t/s','position',[0.5,-90])
-xlabel('(c) 踝关节相角\theta_3与时间关系曲线')
+xlabel('t/s')
+set(gca,'FontSize',30,'FontName','Times New Roman','LineWidth',1);
 grid on
 %}
 
@@ -241,4 +238,5 @@ zlim([-200 50])
 grid on
 hold on
 robot.plot(theta,'movie','movie.gif');%动画演示
+set(gca,'FontSize',15,'FontName','Times New Roman','LineWidth',1);
 %}
