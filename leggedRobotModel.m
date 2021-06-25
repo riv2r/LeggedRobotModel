@@ -122,7 +122,7 @@ for i=linspace(1,sum,sum)
     sptheta=[sptheta;theta1,theta2,theta3,theta4];
 end
 
-
+%{
 % »æÍ¼×¨ÓÃ
 theta=theta/pi*180;
 sptheta=sptheta/pi*180;
