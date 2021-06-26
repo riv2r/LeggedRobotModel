@@ -70,11 +70,10 @@ for i=time
     spDz=[spDz supportDz()+init_T.t(3)];
 end
 
-
+%{
 % 绘图及保存文件专用
 swDz=swDz-init_T.t(3);
 spDz=spDz-init_T.t(3);
-%{
 theoData=[swDx' swDz'];
 % 打开文件
 f=fopen('TheoreticalPoints.txt','w');
