@@ -70,10 +70,11 @@ for i=time
     spDz=[spDz supportDz()+init_T.t(3)];
 end
 
-%{
+
 % 绘图及保存文件专用
 swDz=swDz-init_T.t(3);
 spDz=spDz-init_T.t(3);
+%{
 theoData=[swDx' swDz'];
 % 打开文件
 f=fopen('TheoreticalPoints.txt','w');
@@ -146,28 +147,28 @@ grid on
 
 figure(3)
 plot(time,swVx,'linewidth',2);
-ylabel('V_x/mm/s')
+ylabel('Vx/mm·s-1')
 xlabel('t/s')
 set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
 figure(4)
 plot(time,swVz,'linewidth',2);
-ylabel('V_z/mm/s')
+ylabel('Vz/mm·s-1')
 xlabel('t/s')
 set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
 figure(5)
 plot(time,swAx,'linewidth',2);
-ylabel('A_x/mm^2/s')
+ylabel('Ax/mm·s-2')
 xlabel('t/s')
 set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
 
 figure(6)
 plot(time,swAz,'linewidth',2);
-ylabel('A_z/mm^2/s')
+ylabel('Az/mm·s-2')
 xlabel('t/s')
 set(gca,'FontSize',20,'FontName','Times New Roman','LineWidth',1);
 grid on
